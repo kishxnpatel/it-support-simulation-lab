@@ -23,9 +23,11 @@ The goal of this project was to strengthen hands-on skills in virtualization, Li
 Three virtual machines were created and configured:
 
 1. **Linux Mint Server** – Hosted Apache, PHP, MariaDB, and osTicket.
-   <img src="New Folder/Linuxsetup.png" alt="Linux Mint Setup" width="500">
-3. **Technician VM (Windows 10)** – Simulated IT support staff responding to tickets.  
-4. **User VM (Windows 10)** – Simulated an end-user submitting tickets.
+<img src="New folder/Linuxsetup.png" alt="Linux Mint Setup" width="450">
+2. **Technician VM (Windows 10)** – Simulated IT support staff responding to tickets.
+<img src="screenshots/TechnicianSetup.png" alt="Technician VM Setup" width="450">
+3. **User VM (Windows 10)** – Simulated an end-user submitting tickets.
+<img src="screenshots/userSetup.png" alt="User VM Setup" width="450">
 
 ### Network Configuration
 - **Internal Network and Host-Only Adapter** enabled communication between VMs.  
@@ -33,7 +35,9 @@ Three virtual machines were created and configured:
   - Linux Mint: 192.168.56.104
   - Technician VM: 192.168.56.101
   - User VM: 192.168.56.102
-- Connectivity tested successfully using ping commands.
+  
+  Connectivity tested successfully using ping commands. </br>
+ <img src="screenshots/ping (1).png" alt="Ping Test 1" width="400"> <img src="screenshots/ping (2).png" alt="Ping Test 2" width="400">
 
 ---
 
@@ -60,23 +64,24 @@ FLUSH PRIVILEGES:
 `sudo chmod 0644 include/ost-config.php`
 3. Completed web-based installation, connecting to the configured database.
 
+<img src="screenshots/osticketinst (1).png" alt="osTicket Installation Step 1" width="400"> <img src="screenshots/osticketinst (2).png" alt="osTicket Installation Step 2" width="400"> </br>
+<img src="screenshots/osticketinst (3).png" alt="osTicket Installation Step 3" width="400"> <img src="screenshots/osticketinst (4).png" alt="osTicket Installation Step 4" width="400"> </br>
+<img src="screenshots/osticketinst (5).png" alt="osTicket Installation Step 5" width="400">
+
 ### Ticket Workflow
 User Actions
  - Accessed `http://192.168.56.104/osticket` from the User VM.
- - Submitted a new ticket with issue details.
+ - Submitted a new ticket with issue details. </br>
+<img src="screenshots/userticketform.png" alt="User Ticket Form" width="400"> <img src="screenshots/userticketconform.png" alt="User Ticket Confirmation" width="400"> </br>
 
 Technician Actions
  - Logged into the Staff Control Panel at `http://192.168.56.104/osticket/scp`
  - Viewed, responded to, and resolved the submitted ticket.
+</br>
 
-### Screenshots
-Screenshots are organized in the `screenshots` folder:
-
-1. VirtualBox VM overview
-2. Network ping tests
-3. osTicket installation process
-4. User ticket submission
-5. Technician ticket response and ticket resolution
+<img src="screenshots/Staffcontrol.png" alt="Staff Control Panel" width="400"> <img src="screenshots/staffresponse.png" alt="Staff Ticket Response" width="400"> </br>
+<img src="screenshots/Staffreply.png" alt="Staff Ticket Reply" width="400"> <img src="screenshots/Ticketresolved.png" alt="Ticket Resolved" width="400"> </br>
+<img src="screenshots/osticketstaffdashboard.png" alt="Staff Dashboard" width="500">
 
 ### How to Reproduce
 1. Clone this repository.
