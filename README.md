@@ -1,77 +1,53 @@
-# 🖥️ IT Support Simulation Lab
+# 🖥️# IT Support Lab Project – osTicket Helpdesk System
 
-A complete **IT Support & Helpdesk Simulation Project** designed to replicate real-world technical support workflows.  
-This project showcases **ticket management, troubleshooting, and knowledge base documentation**—key skills for IT Support, Helpdesk, and Service Desk roles.
+## Overview
+This project demonstrates the setup of a functional IT helpdesk system using osTicket in a virtualized lab environment.  
+It replicates a real-world IT support workflow where users submit tickets, and technicians manage and resolve them.
 
----
-
-## ✅ Project Overview
-
-This lab consists of **two major modules**:
-
-### 1️⃣ Ticketing System Simulation (GLPI/OSTicket)
-- **10 real-world IT tickets** created and resolved in a simulated helpdesk environment.
-- Includes:
-  - Ticket creation, prioritization, and resolution lifecycle.
-  - SLA-like response & closure notes.
-  - Exported ticket history for reporting.
-
-### 2️⃣ Windows 10/11 Helpdesk Lab
-- **8 realistic troubleshooting scenarios** recreated on virtual machines.
-- Each issue documented in a **Knowledge Base Entry (KBE)** format:
-  - **Problem**
-  - **Root Cause**
-  - **Step-by-step Solution**
-  - **Resolution Time**
+The goal of this project was to strengthen hands-on skills in virtualization, Linux server administration, networking, and IT support ticketing systems.
 
 ---
 
-## 📂 Repository Structure:</br>
-it-support-simulation-lab/</br>
-│</br>
-├── tickets/ # Ticket screenshots & exported reports </br>
-├── kb/ # Knowledge Base PDFs</br>
-└── README.md # This file</br>
-
-
----
-
-## 🛠️ Technologies & Tools Used
-
-- **Ticketing System:** OSTicket / GLPI  
-- **OS & Virtualization:** Windows 10/11 (VMware/VirtualBox)  
-- **Networking Tools:** Ping, Traceroute, Wireshark  
-- **Documentation:** Markdown, PDF KB Guides
+## Key Skills Demonstrated
+- Virtualization with Oracle VirtualBox (multi-VM lab setup)
+- Network configuration and troubleshooting (Host-Only and Internal networks)
+- Linux server administration (Apache, PHP, MariaDB installation)
+- Database management (MySQL database creation and user configuration)
+- Helpdesk operations using osTicket (ticket creation, assignment, and resolution)
 
 ---
 
-## 📌 Ticket Scenarios
+## Lab Setup
 
-| Ticket No. | Issue | Resolution Summary |
-|------------|-------|--------------------|
-| 01 | VPN Not Connecting | Reset credentials, reconfigured OpenVPN |
-| 02 | Outlook Not Syncing | Repaired profile, cleared cache |
-| 03 | Wi-Fi Dropping Frequently | Updated drivers, disabled power saving |
-| 04 | Password Reset Request | Verified identity, reset via AD |
-| 05 | Printer Not Responding | Reinstalled driver, cleared spooler |
-| 06 | Shared Drive Not Accessible | Mapped drive via Group Policy |
-| 07 | Windows Update Failing | Manual install via CMD |
-| 08 | USB Not Detected | Device Manager troubleshooting |
-| 09 | Slow PC Performance | Disabled startup apps, disk cleanup |
-| 10 | Account Locked | Unlocked via Active Directory tools |
+### Virtual Machines
+Three virtual machines were created and configured:
 
----
+1. **Linux Mint Server** – Hosted Apache, PHP, MariaDB, and osTicket.  
+2. **Technician VM (Windows 10)** – Simulated IT support staff responding to tickets.  
+3. **User VM (Windows 10)** – Simulated an end-user submitting tickets.
 
-## 🔧 Troubleshooting Scenarios (Windows Lab)
-
-Each issue is documented in detail in the [KB Guide](./kb/windows_troubleshooting_guide.pdf).
+### Network Configuration
+- **Internal Network and Host-Only Adapter** enabled communication between VMs.  
+- Static IPs assigned:
+  - Linux Mint: 192.168.56.104
+  - Technician VM: 192.168.56.101
+  - User VM: 192.168.56.102
+- Connectivity tested successfully using ping commands.
 
 ---
 
-## 📈 What This Project Demonstrates
+## Installation Highlights
 
-✔️ Incident & Ticket Management  
-✔️ Step-by-step Technical Troubleshooting  
-✔️ Knowledge Base Creation (Documentation Skills)  
-✔️ SLA-Oriented Problem Resolution
+### Hosting Environment Setup
+- Installed Apache, PHP, and MariaDB on Linux Mint.
+- Verified PHP prerequisites required by osTicket.
+
+### Database Configuration
+Created and configured the database:
+
+```sql
+CREATE DATABASE osticket;
+CREATE USER 'osticketuser'@'localhost' IDENTIFIED BY 'pass123';
+GRANT ALL PRIVILEGES ON osticket.* TO 'osticketuser'@'localhost';
+FLUSH PRIVILEGES;
 
