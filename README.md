@@ -49,5 +49,38 @@ Created and configured the database:
 CREATE DATABASE osticket;
 CREATE USER 'osticketuser'@'localhost' IDENTIFIED BY 'pass123';
 GRANT ALL PRIVILEGES ON osticket.* TO 'osticketuser'@'localhost';
-FLUSH PRIVILEGES;
+FLUSH PRIVILEGES:
+```
 
+### osTicket Installation
+1. Downloaded and extracted osTicket to /var/www/html/osticket.
+2. Renamed and secured the configuration file: </br>
+`sudo cp include/ost-sampleconfig.php include/ost-config.php` </br>
+`sudo chmod 0644 include/ost-config.php`
+3. Completed web-based installation, connecting to the configured database.
+
+### Ticket Workflow
+User Actions
+ - Accessed `http://192.168.56.104/osticket` from the User VM.
+ - Submitted a new ticket with issue details.
+
+Technician Actions
+ - Logged into the Staff Control Panel at `http://192.168.56.104/osticket/scp`
+ - Viewed, responded to, and resolved the submitted ticket.
+
+### Screenshots
+Screenshots are organized in the `screenshots` folder:
+
+1. VirtualBox VM overview
+2. Network ping tests
+3. osTicket installation process
+4. User ticket submission
+5. Technician ticket response and ticket resolution
+
+### How to Reproduce
+1. Clone this repository.
+2. Follow the setup steps described in the IT Support Lab Report.
+3. Test the helpdesk system using the provided configuration steps.
+
+### Conclusion
+This project replicates a real-world IT helpdesk environment. It demonstrates skills in networking, Linux administration, database management, and helpdesk workflows. It can be extended further by integrating email notifications and automation for advanced IT support simulations.
