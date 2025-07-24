@@ -23,7 +23,7 @@ The goal of this project was to strengthen hands-on skills in virtualization, Li
 Three virtual machines were created and configured:
 
 1. **Linux Mint Server** – Hosted Apache, PHP, MariaDB, and osTicket.
-<img src="New folder/Linuxsetup.png" alt="Linux Mint Setup" width="450">
+<img src="screenshots/Linuxsetup.png" alt="Linux Mint Setup" width="450">
 2. **Technician VM (Windows 10)** – Simulated IT support staff responding to tickets.
 <img src="screenshots/TechnicianSetup.png" alt="Technician VM Setup" width="450">
 3. **User VM (Windows 10)** – Simulated an end-user submitting tickets.
